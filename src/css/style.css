@@ -1,0 +1,153 @@
+main {
+    background: url(../images/bg-repeat.jpg) repeat-x;
+    background-size: contain;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.info-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 287px;
+    margin: 0 10px;
+}
+
+.info-description .title {
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding-bottom: 11px;
+}
+
+.info-description .description {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    height: 378px;
+    width: 340px;
+    margin: 12px 50px;
+    padding: 20px;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+
+#name,
+#email,
+#phone,
+#message {
+    width: 298px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 8px;
+    height: 35px;
+    margin-top: 15px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #a8a8a8;
+    font-weight: 700;
+}
+
+#message {
+    height: 100px;
+    resize: none;
+}
+
+.container .text-fixed {
+    color: #000000;
+    font-size: 15px;
+    font-weight: 400;
+    align-content: flex-start;
+    margin: 12px 0 15px 0;
+}
+
+.container small {
+    visibility: hidden;
+    position: absolute;
+}
+
+.btn-send {
+    width: 298px;
+    background-color: #3CCC87;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 8px;
+    margin: 0 0 15px 0;
+    cursor: pointer;
+}
+
+/* ------- Campos imcompletos - erro -------- */
+
+.fill-field.error input#name,
+.fill-field.error input#email,
+.fill-field.error input#phone,
+.fill-field.error textarea#message {
+    border: 1px solid #F52E2E;
+}
+
+.container small.text-error {
+    visibility: visible;
+    color: #F52E2E;
+    font-size: 8px;
+    position: absolute;
+    top: 50px;
+}
+
+.container small.text-error:nth-child(2) {
+    top: 100px;
+}
+
+.container small.text-error:nth-child(4) {
+    top: 150px;
+}
+
+.container small.text-error:nth-child(6) {
+    top: 265px;
+}
+
+/* ------- Campos completos - enviado -------- */
+
+.fill-field.success input#name,
+.fill-field.success input#email,
+.fill-field.success input#phone,
+.fill-field.success textarea#message {
+    border: 1px solid #00C22B;
+}
+
+
+@media (max-width: 570px) {
+    main {
+        flex-direction: column;
+    }
+
+    .info-description {
+        text-align: center;
+    }
+
+    .container {
+        width: 320px;
+    }
+}
